@@ -45,7 +45,6 @@ async function fetchAndCreateMovies() {
       content.appendChild(button); //This is a test
       card.appendChild(image);
       card.appendChild(content);
-      
 
       container.appendChild(card);
     });
