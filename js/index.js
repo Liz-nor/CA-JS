@@ -1,10 +1,4 @@
-import { add } from "./math.js";
-
-function main() {
-  console.log(add(2, 3));
-}
 const container = document.querySelector("#container");
-const cart = [];
 const API_URL = "https://v2.api.noroff.dev/square-eyes";
 
 async function fetchAndCreateMovies() {
@@ -20,6 +14,7 @@ async function fetchAndCreateMovies() {
       const title = document.createElement("h2");
       const price = document.createElement("p");
       const button = document.createElement("button"); //This is a test
+      const anchor = document.createElement("a");
 
       card.className = "card";
       image.className = "card-image";
@@ -33,6 +28,7 @@ async function fetchAndCreateMovies() {
       title.textContent = product.title;
       price.textContent = product.price;
       button.textContent = "Add to cart";
+      anchor.href = `product/product.html?id=${product.id}`;
 
       // Test
       button.addEventListener("click", () => {
@@ -45,12 +41,12 @@ async function fetchAndCreateMovies() {
       content.appendChild(button); //This is a test
       card.appendChild(image);
       card.appendChild(content);
+      anchor.appendChild(card);
 
-      container.appendChild(card);
+      container.appendChild(anchor);
     });
   } catch (error) {
     console.error("Failed to load");
   }
 }
-main();
 fetchAndCreateMovies();

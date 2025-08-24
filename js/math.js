@@ -1,3 +1,3 @@
-export function add(a, b) {
-  return a + b;
+export function calculateTotalPrice(product) {
+  return product.reduce((sum, p) => sum + p.price * p.quantity, 0);
 }
