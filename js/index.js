@@ -30,11 +30,11 @@ async function fetchAndCreateMovies() {
       button.textContent = "Add to cart";
       anchor.href = `product/product.html?id=${product.id}`;
 
-      // Test
-      button.addEventListener("click", () => {
-        cart.push(product);
-        renderCart();
-      });
+      // // Test
+      // button.addEventListener("click", () => {
+      //   cart.push(product);
+      //   renderCart();
+      // });
 
       content.appendChild(title);
       content.appendChild(price);
