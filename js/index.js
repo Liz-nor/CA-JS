@@ -1,3 +1,10 @@
+export async function setupPostsPage() {
+  const posts = await getPosts();
+  const paginatedPosts = paginate(posts, 10);
+  renderPosts(paginatedPosts[0]);
+  renderPagination(paginatedPosts);
+}
+
 const container = document.querySelector("#container");
 const API_URL = "https://v2.api.noroff.dev/square-eyes";
 
@@ -21,24 +28,22 @@ async function fetchAndCreateMovies() {
       content.className = "card-content";
       title.className = "card-title";
       price.className = "card-price";
-      button.className = "card-button"; //This is a test
 
       image.src = product.image.url;
       image.alt = product.image.alt;
       title.textContent = product.title;
       price.textContent = product.price;
       button.textContent = "Add to cart";
-      anchor.href = `product/product.html?id=${product.id}`;
+      anchor.href = `../product/product.html?id=${product.id}`;
 
-      // // Test
-      // button.addEventListener("click", () => {
-      //   cart.push(product);
-      //   renderCart();
-      // });
+      // Test
+      button.addEventListener("click", () => {
+        cart.push(product);
+        renderCart();
+      });
 
       content.appendChild(title);
       content.appendChild(price);
-      content.appendChild(button); //This is a test
       card.appendChild(image);
       card.appendChild(content);
       anchor.appendChild(card);

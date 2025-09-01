@@ -57,7 +57,7 @@ ul {
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 5px 5px 5px rgb(219, 219, 219);
+    box-shadow: 5px 5px 5px rgb(88, 88, 88);
 }
 
 .card-image {
@@ -66,9 +66,19 @@ ul {
     object-fit: cover;
 }
 
-.card-button {
+.button {
     width: 100px;
     height: 25px;
-    border: none;
     cursor: pointer;
 }
+
+a {
+    text-decoration: none;
+}
+
+h2, p {
+    color: black;
+}
+
+
+

@@ -3,7 +3,6 @@ const API_URL = "https://v2.api.noroff.dev/square-eyes";
 
 async function fetchAndCreateMovies() {
   try {
-    container.textContent = "Loading...";
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
@@ -13,7 +12,6 @@ async function fetchAndCreateMovies() {
     }
 
     const response = await fetch(`${API_URL}/${id}`);
-    console.log("Fetch status:", response.status);
 
     if (response.status === 304) {
       container.textContent =
@@ -25,7 +23,6 @@ async function fetchAndCreateMovies() {
       throw new Error(`Network error: ${response.status}`);
     }
 
-    const data = await response.json();
     const data = await response.json();
     const product = data.data;
 
