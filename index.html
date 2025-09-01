@@ -12,25 +12,22 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li id="horror"><a href=""></a>Horror</li>
-                <li id="thrillers"><a href=""></a>Thrillers</li>
-                <li id="action"><a href=""></a>Action</li>
-                <li><a href=""></a></li>
-            </ul>
-        </nav>
-        <div class="movies">
+        <!-- <div class="movies">
             <h2>Browse our movies</h2>
         </div>
         <div class="cart-icon">
             <img src="/assets/cart-shopping-svgrepo-com.svg" alt="icon of shopping cart">
             <span>0</span>
-        </div>
-
-        
+        </div> -->
     </header>
     <main>
+        <div class="btn-container">
+            <div class="filter-button">
+                <button class="active" data-name="all">Show all</button>
+                <button data-name="horror">Horror</button>
+                <button data-name="Action">Action</button>
+            </div>
+        </div>
         <div class="container" id="container"></div>
         <div id="pagination"></div>
     </main>
