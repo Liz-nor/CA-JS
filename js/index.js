@@ -17,32 +17,30 @@ async function fetchAndCreateMovies() {
       const anchor = document.createElement("a");
 
       card.className = "card";
+
       image.className = "card-image";
       content.className = "card-content";
       title.className = "card-title";
       price.className = "card-price";
+
+      card.dataset.name = product.genre || product.category || "uncategorized";
 
       image.src = product.image.url;
       image.alt = product.image.alt;
       title.textContent = product.title;
       price.textContent = product.price;
       button.textContent = "Add to cart";
-      anchor.href = `../product/product.html?id=${product.id}`;
-
-      // Test
-      button.addEventListener("click", () => {
-        cart.push(product);
-        renderCart();
-      });
+      anchor.href = `/CA-JS/product/product.html?id=${product.id}`;
 
       content.appendChild(title);
       content.appendChild(price);
       card.appendChild(image);
       card.appendChild(content);
       anchor.appendChild(card);
-
       container.appendChild(anchor);
     });
+
+    setupFilters();
   } catch (error) {
     console.error("Failed to load");
   }
