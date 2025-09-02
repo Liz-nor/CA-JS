@@ -1,16 +1,10 @@
-const navItems = document.querySelectorAll(".navbar li");
+const filterButtons = document.querySelectorAll(".filter-buttons button");
+const product = document.querySelectorAll("");
+const product = (e) => {
+  document.querySelector(".active").classList.remove("active");
+  e.target.classList.add("active");
 
-navItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    const category = item.textContent.trim();
+  console.log(e.target);
+};
 
-    if (category.toLowerCase() === "all") {
-      window.setupPagination(window.allMovies);
-    } else {
-      const filtered = window.allMovies.filter(
-        (movie) => movie.genre?.toLowerCase() === category.toLowerCase()
-      );
-      window.setupPagination(filtered);
-    }
-  });
-});
+filterButtons.forEach((button) => button.addEventListener("click", product));

@@ -1,10 +1,3 @@
-export async function setupPostsPage() {
-  const posts = await getPosts();
-  const paginatedPosts = paginate(posts, 10);
-  renderPosts(paginatedPosts[0]);
-  renderPagination(paginatedPosts);
-}
-
 const container = document.querySelector("#container");
 const API_URL = "https://v2.api.noroff.dev/square-eyes";
 
