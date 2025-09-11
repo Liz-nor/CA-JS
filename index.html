@@ -3,39 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CA-JS/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io (3)/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io (3)/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io (3)/favicon-16x16.png">
-    <script src="/CA-JS/js/index.js" type="module"></script>
-    <script src="/CA-JS/js/filter.js" type="module"></script>
+    <script src="./js/index.js" type="module"></script>
+    <script src="./js/filter.js" type="module"></script>
     <title>CA JavaScript</title>
 </head>
 <body>
     <header>
-        <!-- <div class="movies">
-            <h2>Browse our movies</h2>
+        <h3><img src="/assets/favicon_io (3)/favicon-32x32.png" alt="">Square Eyes movie central</h3>
+        <div class="list">
+            <li><span><img src="/assets/house-chimney-blank-svgrepo-com.svg" alt=""></span>Home</li>
+            <li><span><img src="/assets/login-bracket-svgrepo-com.svg" alt=""></span>Login</li>
+            <li><span><img src="/assets/map-point-wave-svgrepo-com.svg" alt=""></span>Find Us</li>
+        </div>
+        <div class="movies">
         </div>
         <div class="cart-icon">
-            <img src="/assets/cart-shopping-svgrepo-com.svg" alt="icon of shopping cart">
+            <img src="assets/cart-shopping-svgrepo-com.svg" alt="shopping-cart">
             <span>0</span>
-        </div> -->
-    </header>
+        </div>
+     </header>
     <main>
-        <main>
-  <article></article>
-  <nav class="pagination"></nav>
-        <!-- <div class="btn-container">
-            <div class="filter-buttons">
-                <button class="active" data-name="all">Show all</button>
-                <button data-name="action">Action</button>
-                <button data-name="horror">Horror</button>
-                <button data-name="kids">Kids</button>
-                <button data-name="drama">Drama</button>
-            </div>
-        </div> -->
-        <div class="container" id="container"></div>
-        <div id="pagination"></div>
+        <div class="filterContainer">
+            <h2>Browse our movies</h2>
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="action">Action</option>
+            <option value="horror">Horror</option>
+            <option value="kids">Kids</option>
+           <option value="comedy">Comedy</option>
+        </select>
+        </div>
+        <div id="container"></div>
+        <div id="cart" class="hidden">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <p id="cart-total"></p>
+    <button id="clear-cart">Clear Cart</button>
+    <button id="close-cart">Close</button>
+    <button class="check-out">Check-out</button>
+  </div>
     </main>
 </body>
+<footer>
+
+</footer>
 </html>
