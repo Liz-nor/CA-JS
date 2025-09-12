@@ -19,7 +19,7 @@ async function fetchAndCreateMovies() {
 
     movies.forEach((product) => {
       const anchor = document.createElement("a");
-      anchor.href = `../product/product.html?id=${product.id}`;
+      anchor.href = `product.html?id=${product.id}`;
 
       const card = document.createElement("div");
       const image = document.createElement("img");
