@@ -9,7 +9,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100%;
   min-height: 40px;
 }
@@ -54,6 +55,10 @@ body {
 }
 
 #container a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
   background-color: #fff;
   border-radius: 8px;
 }
@@ -63,6 +68,11 @@ body {
   height: 400px;
   border-radius: 8px;
   object-fit: cover;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .card-image {
@@ -78,10 +88,7 @@ body {
 
 .product-details {
   border: 2px solid red;
-  width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
 }
 
 .addToCartBtn {
@@ -91,7 +98,10 @@ body {
   background-color: #333;
   color: #eee;
 }
+
 .product-details img {
+  width: 100%;
+  height: auto;
   object-fit: contain;
 }
 .product-price {
@@ -240,8 +250,9 @@ input {
 
 .other-movies {
   margin-top: 20px;
+  border: 2px solid red;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .other-movies h3 {
@@ -250,8 +261,6 @@ input {
 }
 
 .movie-card {
- display: inline-block;
-  width: 150px;
   margin: 10px;
   text-align: center;
   background: #eee;
@@ -260,7 +269,6 @@ input {
 
 .movie-card img {
   width: 100%;
-  height: 200px;
   border-radius: 6px;
 }
 

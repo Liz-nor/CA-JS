@@ -45,7 +45,7 @@ async function fetchAndCreateMoviePage() {
     const backButton = document.createElement("a");
     backButton.className = "back-button";
     backButton.textContent = "Back to Movies";
-    backButton.href = "../index.html";
+    backButton.href = "index.html";
 
     const addToCartBtn = document.createElement("button");
     addToCartBtn.className = "addToCartBtn";
