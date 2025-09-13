@@ -3,6 +3,9 @@
 * {
   font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
 }
+body {
+  flex: 1;
+}
 
 header {
   background-color: antiquewhite;
@@ -19,6 +22,7 @@ header {
 main {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
 }
 
 header .cart-icon span {
@@ -78,7 +82,8 @@ body {
 
 .card-image {
   width: 100%;
-  height: 300px;
+  height: 400px;
+
 }
 .card-content {
   padding: 0.5rem 1rem;
@@ -103,24 +108,26 @@ body {
 
 .product-container {
   display: flex;
-  flex-direction: row;
-}
-
-.card-image {
-  border-radius: 8px;
-  width: 100%;
-  height: 400px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+ 
 }
 
 .movie-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: 5px 5px 5px rgb(88, 88, 88);
 }
 
 .product-details {
+  display: flex;
+  border: 4px solid red;
+}
+
+.product-info {
+  display: grid;
+  gap: 20px;
   border: 2px solid red;
-  width: 100%;
-  margin: 0 auto;
 }
 
 .addToCartBtn {
@@ -131,6 +138,22 @@ body {
   color: #eee;
 }
 
+a.btn {
+  display: inline-block;
+  padding: 5px;
+  background: #000000;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  width: 160px;
+  margin-left: 15px;
+  font-size: small;
+  text-align: center;
+}
+
+a.btn:hover {
+  background-color: #007bff;
+}
 .product-details img {
   width: 100%;
   height: auto;
@@ -306,6 +329,7 @@ span img {
   background-color: antiquewhite;
   display: flex;
   justify-content: space-evenly;
+  margin-top: auto;
 }
 
 .footer li {

@@ -31,7 +31,7 @@ export function addToCart(product) {
       qty: 1,
     });
   }
-
+  
   saveCart(cart);
   updateCartCounter();
 }
@@ -132,3 +132,51 @@ export function renderCart() {
   cartTotalEl.textContent = `Total: $${total.toFixed(2)}`;
 }
 
+export function initCartUI() {
+  const cartPanel = document.getElementById("cart");
+  const cartItemsEl = document.getElementById("cart-items");
+  const cartIcon = document.querySelector(".cart-icon");
+  const clearBtn = document.getElementById("clear-cart");
+  const closeBtn = document.getElementById("close-cart");
+  const checkoutBtn = document.getElementById("go-to-checkout");
+
+  // open cart
+  if (cartIcon) {
+    cartIcon.addEventListener("click", () => {
+      cartPanel.classList.remove("hidden");
+      renderCart();
+    });
+  }
+
+  // close cart
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      cartPanel.classList.add("hidden");
+    });
+  }
+
+  // clear cart
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      localStorage.removeItem("cart");
+      renderCart();
+      updateCartCounter();
+    });
+  }
+
+  // remove (delegation)
+  if (cartItemsEl) {
+    cartItemsEl.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-remove-id]");
+      if (!btn) return;
+      removeFromCart(btn.getAttribute("data-remove-id"));
+    });
+  }
+
+  // checkout
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", () => {
+      window.location.href = "checkout.html";
+    });
+  }
+}

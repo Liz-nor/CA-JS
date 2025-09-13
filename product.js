@@ -1,3 +1,5 @@
+import { updateCartCounter, initCartUI, addToCart, renderCart } from "./js/cart.js";
+
 const container = document.querySelector("#container");
 
 async function fetchAndCreateMoviePage() {
@@ -25,6 +27,9 @@ async function fetchAndCreateMoviePage() {
     const productDiv = document.createElement("div");
     productDiv.className = "product-details";
 
+    const productInfo = document.createElement("div");
+    productInfo.className = "product-info";
+
     const image = document.createElement("img");
     image.className = "product-image";
     image.src = product.image.url;
@@ -43,33 +48,23 @@ async function fetchAndCreateMoviePage() {
     description.textContent = product.description;
 
     const backButton = document.createElement("a");
-    backButton.className = "back-button";
+    backButton.className = "back-button btn";
     backButton.textContent = "Back to Movies";
     backButton.href = "index.html";
 
     const addToCartBtn = document.createElement("button");
     addToCartBtn.className = "addToCartBtn";
     addToCartBtn.textContent = "Add To Cart";
+    addToCartBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      addToCart(product);
+      updateCartCounter();
+      renderCart();
+    })
 
-    productDiv.append(image, title, price, description, backButton, addToCartBtn);
+    productDiv.append(image, productInfo);
+    productInfo.append(title, price, description, backButton, addToCartBtn);
     container.appendChild(productDiv);
-
-    // Henter alle filmer
-    const allResponse = await fetch(API_URL);
-    if (!allResponse.ok) {
-      throw new Error(`Failed to load other movies: ${allResponse.status}`);
-    }
-    const allData = await allResponse.json();
-    const allMovies = allData.data;
-
-    // Filtrerer i samme sjanger
-    const sameGenreMovies = allMovies.filter(movie => {
-      if (movie.id === product.id) return false; // denne gjør så man hopper over filmen som er i fokus
-      if (Array.isArray(movie.genre)) {
-        return movie.genre.includes(product.genre);
-      }
-      return movie.genre === product.genre;
-    });
 
   } catch (error) {
     console.error("Failed to fetch product", error);
@@ -78,3 +73,5 @@ async function fetchAndCreateMoviePage() {
 }
 
 fetchAndCreateMoviePage();
+updateCartCounter();
+initCartUI();
