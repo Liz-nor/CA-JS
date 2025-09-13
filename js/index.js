@@ -18,36 +18,45 @@ async function fetchAndCreateMovies() {
     container.innerHTML = "";
 
     movies.forEach((product) => {
+      // wrapper for card
+      const card = document.createElement("div");
+      card.className = "movie-card";
+      //link
       const anchor = document.createElement("a");
       anchor.href = `product.html?id=${product.id}`;
-
-      const card = document.createElement("div");
+      anchor.className = "card-anchor";
+      //image
       const image = document.createElement("img");
-      const content = document.createElement("div");
-      const title = document.createElement("h2");
-      const price = document.createElement("p");
-      const button = document.createElement("button");
-
       image.className = "card-image";
-      content.className = "card-content";
-      title.className = "card-title";
-      price.className = "card-price";
-      button.className = "add-to-cart";
+      image.src = product.image?.url || "";
+      image.alt = product.image?.alt || product.title || "Movie";
 
+      //title and price
+      const content = document.createElement("div");
+      content.className = "card-content";
+
+      const title = document.createElement("h2");
+      title.className = "card-title";
+      title.textContent = product.title || "Untitled";
+
+      const price = document.createElement("p");
+      price.className = "card-price";
+      price.textContent = `$${product.price}`;
+
+      // filter
       const cat = product.genre || product.category || "uncategorized";
       card.dataset.category = String(cat).toLowerCase();
 
-      image.src = product.image?.url || "";
-      image.alt = product.image?.alt || product.title || "Movie";
-      title.textContent = product.title || "Untitled";
-      price.textContent = `$${product.price}`;
+      //button
+      const button = document.createElement("button");
+      button.className = "add-to-cart";
       button.textContent = "Add to Cart";
-
       button.addEventListener("click", (event) => {
         event.preventDefault(); // stop anchor navigation when clicking button
         addToCart(product);
-      });
-
+        renderCart();
+        });
+      
       content.appendChild(title);
       content.appendChild(price);
       card.appendChild(image);

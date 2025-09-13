@@ -71,38 +71,6 @@ async function fetchAndCreateMoviePage() {
       return movie.genre === product.genre;
     });
 
-    // Forslag andre filmer samme sjanger HUSK å ta bort console.log!
-    if (sameGenreMovies.length > 0) {
-      const otherMoviesSection = document.createElement("div");
-      otherMoviesSection.className = "other-movies";
-
-      const heading = document.createElement("h3");
-      heading.textContent = `Other ${product.genre} movies`;
-      otherMoviesSection.appendChild(heading);
-
-      sameGenreMovies.forEach(movie => {
-        const card = document.createElement("div");
-        card.className = "movie-card";
-
-        const link = document.createElement("a");
-        link.href = `product.html?id=${movie.id}`;
-
-        const img = document.createElement("img");
-        img.src = movie.image.url;
-        img.alt = movie.image.alt;
-
-        const movieTitle = document.createElement("p");
-        movieTitle.textContent = movie.title;
-
-        link.append(img, movieTitle);
-        card.appendChild(link);
-        otherMoviesSection.appendChild(card);
-      });
-
-      container.appendChild(otherMoviesSection);
-    } else {
-      console.log("No other movies found in this genre.");
-    }
   } catch (error) {
     console.error("Failed to fetch product", error);
     container.textContent = "Failed to load product";
