@@ -36,9 +36,18 @@ const modal = document.getElementById("orderModal");
 const closeModalBtn = document.getElementById("closeModal");
 
 if (placeOrderBtn) {
-  placeOrderBtn.addEventListener("click", (e) => {
+  placeOrderBtn.addEventListener("click", async (e) => {
     e.preventDefault();
+    placeOrderBtn.disabled = true;
+
+    const originalText = placeOrderBtn.textContent;
+
+    placeOrderBtn.innerHTML = `<span class="button-spinner"></span> Processing...`;
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
     localStorage.removeItem("cart");
+    placeOrderBtn.textContent = originalText;
+    placeOrderBtn.disabled = false;
 
     modal.classList.remove("hidden");
   });
