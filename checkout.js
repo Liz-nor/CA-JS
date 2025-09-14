@@ -6,8 +6,13 @@ if (cart.length === 0) {
   container.textContent = "Your cart is empty.";
 } else {
   let total = 0;
+
+  const itemsWrapper = document.createElement("div");
+  itemsWrapper.className = "checkout-items";
+
   cart.forEach(item => {
     total += item.price * item.qty;
+
     const div = document.createElement("div");
     div.className = "checkout-item";
     div.innerHTML = `
@@ -15,8 +20,11 @@ if (cart.length === 0) {
       <p>Qty: ${item.qty}</p>
       <p>Subtotal: $${(item.price * item.qty).toFixed(2)}</p>
     `;
-    container.appendChild(div);
+
+    itemsWrapper.appendChild(div);
   });
+
+  container.appendChild(itemsWrapper);
 
   const totalDiv = document.createElement("p");
   totalDiv.textContent = `Total: $${total.toFixed(2)}`;

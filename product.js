@@ -1,6 +1,6 @@
 import { updateCartCounter, initCartUI, addToCart, renderCart } from "./js/cart.js";
 
-const container = document.querySelector("#container");
+const container = document.querySelector("#productContainer");
 
 async function fetchAndCreateMoviePage() {
   try {
@@ -14,7 +14,6 @@ async function fetchAndCreateMoviePage() {
 
     const API_URL = "https://v2.api.noroff.dev/square-eyes";
 
-    // Hovedfilmen
     const response = await fetch(`${API_URL}/${id}`);
     if (!response.ok) {
       throw new Error(`Network error: ${response.status}`);
@@ -23,7 +22,6 @@ async function fetchAndCreateMoviePage() {
     const data = await response.json();
     const product = data.data;
 
-    // Hovedfilmens detaljer
     const productDiv = document.createElement("div");
     productDiv.className = "product-details";
 

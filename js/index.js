@@ -46,6 +46,9 @@ async function fetchAndCreateMovies() {
 
       // filter
       const cat = product.genre || product.category || "uncategorized";
+      if(Array.isArray(cat)) {
+        cat = cat[0];
+      }
       card.dataset.category = String(cat).toLowerCase();
 
       //button

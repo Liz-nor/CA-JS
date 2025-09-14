@@ -3,9 +3,6 @@
 * {
   font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
 }
-body {
-  flex: 1;
-}
 
 header {
   background-color: antiquewhite;
@@ -22,7 +19,6 @@ header {
 main {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
 }
 
 header .cart-icon span {
@@ -68,6 +64,16 @@ body {
   gap: 1rem;
 }
 
+#productContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  justify-content: center;
+}
+
+#productContainer h2,
+#productContainer p {
+  margin-left: 20px;
+}
 .movie-card {
   display: flex;
   flex-direction: column;
@@ -106,14 +112,6 @@ body {
   right: 0;
 }
 
-.product-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
- 
-}
-
 .movie-card:hover {
   transform: scale(1.02);
   box-shadow: 5px 5px 5px rgb(88, 88, 88);
@@ -121,21 +119,21 @@ body {
 
 .product-details {
   display: flex;
-  border: 4px solid red;
 }
 
 .product-info {
   display: grid;
+  grid-template-columns: repeat(1, 1fr);
   gap: 20px;
-  border: 2px solid red;
 }
 
 .addToCartBtn {
   border-radius: 8px;
-  margin: 10px;
-  padding: 5px;
+  margin: 13px;
+  padding: 3px;
   background-color: #333;
   color: #eee;
+  width: 170px;
 }
 
 a.btn {
@@ -144,7 +142,6 @@ a.btn {
   background: #000000;
   color: #fff;
   border-radius: 8px;
-  text-decoration: none;
   width: 160px;
   margin-left: 15px;
   font-size: small;
@@ -165,7 +162,6 @@ a.btn:hover {
 }
 
 #categoryFilter {
-  border-radius: 5px;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -191,7 +187,7 @@ p {
 .cart-row {
   display: grid;
   grid-template-rows: repeat(1, 150px);
-  margin: 10px;
+  margin: 5px;
 }
 
 .cart-row button {
@@ -200,7 +196,7 @@ p {
 }
 
 .cart-row img {
-  width: 100px;
+  height: 100px;
 }
 
 #cart {
@@ -211,8 +207,9 @@ p {
   width: 300px;
   background: #fff;
   height: 100%;
-  padding: 1rem;
+  padding: 10px;
   box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  overflow-y: auto;
 }
 
 #cart button {
@@ -227,13 +224,13 @@ p {
 
 .checkoutForm {
   max-width: 450px;
-  margin: 50px auto;
   border: 3px solid grey;
 }
 
 .personalInfo {
   display: grid;
   grid-template-rows: repeat(1, 1fr);
+  padding: 5px;
 }
 
 input[type=text], [type=email] {
@@ -241,21 +238,33 @@ input[type=text], [type=email] {
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #ccc;
-  margin-left: 10px;
 }
 
 #checkout-container {
-  border: 2px solid black;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
   font-size: large;
-  
+  max-width: 1200px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.checkout-items {
+  border: 2px solid grey;
+  margin: auto;
+}
+
+.checkout-total {
+  margin: auto;
 }
 
 label {
   margin-left: 10px;
 }
 
-.submitbtn {
+#check-out {
   width: 200px;
   height: 50px;
   margin: auto;
@@ -264,22 +273,7 @@ label {
   border: none;
 }
 
-.other-movies {
-  margin-top: 20px;
-  border: 2px solid red;
-  display: flex;
-  flex-direction: row;
-}
-
-.other-movies h3 {
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-
-
 span img {
-  color: black;
   height: 20px;
 }
 
@@ -290,13 +284,8 @@ span img {
 
 .list li {
   padding: 10px;
-}
-
-.list img {
   color: black;
 }
-
-
 
 .modal {
   position: fixed;
@@ -304,7 +293,7 @@ span img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -322,18 +311,47 @@ span img {
   max-width: 400px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border: 6px solid green;
 }
 
+#closeModal {
+  width: 100px;
+  height: 30px;
+  margin: auto;
+  background-color: green;
+  color: #fff;
+  border: none;
+}
 
 .footer {
   background-color: antiquewhite;
   display: flex;
   justify-content: space-evenly;
-  margin-top: auto;
 }
 
 .footer li {
   list-style-type: none;
+  
+}
+
+.footer a {
+  color: black;
   display: flex;
   align-items: center;
+}
+
+.temporary-image img {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: auto;
+  width: 100%;
+}
+
+.temporary-text {
+  width:400px;
+  position: absolute;
+  top: 20em;
+  left: 40em;
+  z-index: 3;
 }
