@@ -8,10 +8,10 @@ header {
   background-color: antiquewhite;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  margin: 50px auto;
   position: sticky;
   top: 0;
-  width: 100%;
   min-height: 40px;
   z-index: 2;
 }
@@ -32,7 +32,6 @@ header .cart-icon span {
   border-radius: 50%;
   position: absolute;
   top: 40%;
-  right: -10px;
   margin: 10px;
 }
 
