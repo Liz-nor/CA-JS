@@ -1,48 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io (3)/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io (3)/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io (3)/favicon-16x16.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon_io (3)/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon_io (3)/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon_io (3)/favicon-16x16.png"
+    />
     <script src="product.js" type="module"></script>
     <script src="./js/cart.js" type="module"></script>
     <title>Browse our movies</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h3><img src="assets/logo.png" class="logo" alt="Old moviereel on a tripod">Square Eyes movie central</h3>
+      <div class="header">
+        <h3>
+          <img
+            src="assets/logo.png"
+            class="logo"
+            alt="Old moviereel on a tripod"
+          />Square Eyes movie central
+        </h3>
         <div class="list">
-            <a href="index.html"><li><span><img src="assets/house-chimney-blank-svgrepo-com.svg" alt="simple ikon of a house"></span>Home</li></a>
-            <a href="temporary.html"><li><span><img src="assets/login-bracket-svgrepo-com.svg" alt="simple icon of an arrow to a door to indicate coming in"></span>Login</li></a>
-            <a href="temporary.html"><li><span><img src="assets/map-point-wave-svgrepo-com.svg" alt="an arrow to a map"></span>Find Us</li></a>
+          <a href="index.html"
+            ><li>
+              <span
+                ><img
+                  src="assets/house-chimney-blank-svgrepo-com.svg"
+                  alt="simple ikon of a house" /></span
+              >Home
+            </li></a
+          >
+          <a href="temporary.html"
+            ><li>
+              <span
+                ><img
+                  src="assets/login-bracket-svgrepo-com.svg"
+                  alt="simple icon of an arrow to a door to indicate coming in" /></span
+              >Login
+            </li></a
+          >
+          <a href="temporary.html"
+            ><li>
+              <span
+                ><img
+                  src="assets/map-point-wave-svgrepo-com.svg"
+                  alt="an arrow to a map" /></span
+              >Find Us
+            </li></a
+          >
         </div>
-        <div class="movies">
-        </div>
+        <div class="movies"></div>
         <div class="cart-icon">
-            <img src="assets/cart-shopping-svgrepo-com.svg" alt="shopping-cart">
-            <span>0</span>
+          <img src="assets/cart-shopping-svgrepo-com.svg" alt="shopping-cart" />
+          <span>0</span>
         </div>
-     </header>
+      </div>
+    </header>
     <div id="productContainer"></div>
     <div id="cart" class="hidden">
-    <h2>Your Cart</h2>
-    <div id="cart-items"></div>
-    <p id="cart-total"></p>
-    <button id="clear-cart">Clear Cart</button>
-    <button id="close-cart">Close</button>
-    <button id="go-to-checkout">Check-out</button>
-  </div>
-</body>
-<footer> 
-    <div class="footer">
-    <img src="assets/logo.png" class="logo" alt="">
-    <a href="temporary.html"><li>About Us</li></a>
-    <a href="temporary.html"><li>Terms and Conditions</li></a>
-    <a href="temporary.html"><li>Shipping</li></a>
-    <a href="temporary.html"><li>Contact Us</li></a>
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <p id="cart-total"></p>
+      <button id="clear-cart">Clear Cart</button>
+      <button id="close-cart">Close</button>
+      <button id="go-to-checkout">Check-out</button>
     </div>
-</footer>
+  </body>
+  <footer>
+    <div class="footer">
+      <img src="assets/logo.png" class="logo" alt="" />
+      <a href="temporary.html"><li>About Us</li></a>
+      <a href="temporary.html"><li>Terms and Conditions</li></a>
+      <a href="temporary.html"><li>Shipping</li></a>
+      <a href="temporary.html"><li>Contact Us</li></a>
+    </div>
+  </footer>
 </html>

@@ -4,15 +4,25 @@ document.addEventListener("DOMContentLoaded", () => {
   if (categoryEl) {
     categoryEl.addEventListener("change", () => {
       const selected = categoryEl.value.toLowerCase();
-      const cards = document.querySelectorAll("#container .movie-card"); 
+      const cards = document.querySelectorAll("#container .movie-card");
+      const container = document.getElementById("container");
 
-      cards.forEach((card) => { 
+      if (selected === "all") {
+        container.style.display = "grid";
+      } else {
+        container.style.display = "flex";
+        container.style.flexDirection = "row";
+        container.style.flexWrap = "wrap";
+        container.style.alignItems = "center";
+      }
+
+      cards.forEach((card) => {
         const category = card.dataset.category || "";
 
         if (selected === "all" || category === selected) {
-          card.style.display = ""; 
+          card.style.display = "flex";
         } else {
-          card.style.display = "none"; 
+          card.style.display = "none";
         }
       });
     });

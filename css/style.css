@@ -1,19 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-  font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 header {
   background-color: antiquewhite;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 50px auto;
-  position: sticky;
-  top: 0;
-  min-height: 40px;
-  z-index: 2;
 }
 
 main {
@@ -34,14 +29,24 @@ header .cart-icon span {
   top: 40%;
   margin: 10px;
 }
-
+.header {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  min-height: 60px;
+  z-index: 2;
+}
 .logo {
   height: 40px;
 }
 
 .cart-icon img {
-  width: 30px;
-  padding: 10px;
+  width: 25px;
 }
 
 .filterContainer {
@@ -64,9 +69,10 @@ body {
 }
 
 #productContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 200px);
+  display: flex;
+  align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 #productContainer h2,
@@ -81,14 +87,20 @@ body {
   border-radius: 10px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .card-image {
   width: 100%;
-  height: 400px;
-
+  aspect-ratio: 2/3;
+  overflow: hidden;
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .card-content {
   padding: 0.5rem 1rem;
@@ -118,6 +130,7 @@ body {
 
 .product-details {
   display: flex;
+  width: 500px;
 }
 
 .product-info {
@@ -127,24 +140,29 @@ body {
 }
 
 .addToCartBtn {
+  display: inline-block;
+  cursor: pointer;
   border-radius: 8px;
   margin: 13px;
-  padding: 3px;
   background-color: #333;
   color: #eee;
   width: 170px;
+  height: 50px;
 }
-
+.back-button {
+  font-size: small;
+  text-align: center;
+  align-items: center;
+}
 a.btn {
   display: inline-block;
   padding: 5px;
   background: #000000;
   color: #fff;
   border-radius: 8px;
+  height: 50px;
   width: 160px;
   margin-left: 15px;
-  font-size: small;
-  text-align: center;
 }
 
 a.btn:hover {
@@ -164,14 +182,14 @@ a.btn:hover {
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 8px 12px; 
+  padding: 8px 12px;
   color: #333;
 }
 
 #categoryFilter:hover {
   border-color: #007bff;
-  outline: none; 
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); 
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 a {
@@ -207,7 +225,7 @@ p {
   background: #fff;
   height: 100%;
   padding: 10px;
-  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   overflow-y: auto;
 }
 
@@ -232,7 +250,8 @@ p {
   padding: 5px;
 }
 
-input[type=text], [type=email] {
+input[type="text"],
+[type="email"] {
   width: 400px;
   margin-bottom: 20px;
   padding: 12px;
@@ -309,7 +328,7 @@ span img {
   border-radius: 10px;
   max-width: 400px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   border: 6px solid green;
 }
 
@@ -330,7 +349,6 @@ span img {
 
 .footer li {
   list-style-type: none;
-  
 }
 
 .footer a {
@@ -342,15 +360,18 @@ span img {
 .temporary-image img {
   display: flex;
   justify-content: center;
+  height: 100vh;
   position: relative;
   margin: auto;
   width: 100%;
 }
 
 .temporary-text {
-  width:400px;
+  width: 400px;
+  aspect-ratio: 2/3;
+  object-fit: cover;
   position: absolute;
-  top: 20em;
-  left: 40em;
+  top: 40%;
+  left: 40%;
   z-index: 3;
 }

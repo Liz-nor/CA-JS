@@ -1,0 +1,30 @@
+@media (max-width: 1200px) {
+  .temporary-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+@media (max-width: 730px) {
+  .temporary-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .temporary-text {
+    width: 300px;
+    top: 45%;
+    left: 35%;
+  }
+
+  @media (max-width: 680px) {
+    li {
+      display: none;
+    }
+  }
+  h3 {
+    display: none;
+  }
+}
